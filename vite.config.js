@@ -17,7 +17,7 @@ export default defineConfig({
 
       manifest: {
         name: "Be Like Allie C",
-        short_name: "Allie C",
+        short_name: "Be Like Allie C",
 
         description:
           "Beat cravings, build streaks, earn XP, and stay in control.",
@@ -26,7 +26,6 @@ export default defineConfig({
         background_color: "#0b0d12",
 
         display: "standalone",
-
         start_url: "/",
         scope: "/",
 
