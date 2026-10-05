@@ -1206,3 +1206,46 @@ h1 {
 .password-label {
   margin-top: 18px !important;
 }
+/* iPHONE SAFE AREA + FULLSCREEN PWA FIX */
+
+html,
+body,
+#root {
+  min-height: 100%;
+  background: #0b0d12;
+}
+
+body {
+  margin: 0;
+  overscroll-behavior-y: none;
+}
+
+.app {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+
+  padding-top: calc(30px + env(safe-area-inset-top));
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.app > main {
+  flex: 1;
+}
+
+.bottom-nav {
+  margin-top: auto;
+
+  padding-bottom: calc(
+    20px + env(safe-area-inset-bottom)
+  );
+}
+
+@media (max-width: 420px) {
+  .app {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
