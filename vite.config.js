@@ -16,11 +16,11 @@ export default defineConfig({
       ],
 
       manifest: {
-        name: "Take Control",
-        short_name: "Take Control",
+        name: "Be Like Allie C",
+        short_name: "Allie C",
 
         description:
-          "Beat cravings, build streaks, earn XP, and quit vaping one craving at a time.",
+          "Beat cravings, build streaks, earn XP, and stay in control.",
 
         theme_color: "#0b0d12",
         background_color: "#0b0d12",
