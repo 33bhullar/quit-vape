@@ -1401,3 +1401,3419 @@ h2 {
     font-size: 10px;
   }
 }
+
+/* =========================================================
+   GAMES
+   ========================================================= */
+
+.games-screen,
+.game-runner {
+  padding-top: 8px;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+
+  margin-top: 26px;
+}
+
+.game-card {
+  min-height: 190px;
+
+  border: 1px solid #292e39;
+  border-radius: 22px;
+
+  padding: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #171a21,
+      #15181f
+    );
+
+  color: white;
+
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.game-card:nth-child(3n + 1) {
+  background:
+    linear-gradient(
+      145deg,
+      #1a1824,
+      #211b31
+    );
+}
+
+.game-card:nth-child(3n + 2) {
+  background:
+    linear-gradient(
+      145deg,
+      #171d1a,
+      #19241f
+    );
+}
+
+.game-card-locked {
+  opacity: 0.48;
+}
+
+.game-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  margin-bottom: 18px;
+}
+
+.game-icon {
+  width: 44px;
+  height: 44px;
+
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #282035;
+
+  color: #c1a4ff;
+
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.game-lock {
+  padding: 6px 8px;
+
+  border-radius: 999px;
+
+  background: #252932;
+
+  color: #848b97;
+
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.game-card h2 {
+  margin-bottom: 7px;
+
+  font-size: 17px;
+}
+
+.game-card p {
+  color: #898f9a;
+
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.game-card-bottom {
+  margin-top: auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #ad91ef;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.game-card-bottom strong {
+  color: #777e89;
+
+  font-size: 9px;
+}
+
+.game-runner-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.game-live-stats {
+  display: flex;
+  gap: 7px;
+}
+
+.game-live-stats span {
+  padding: 8px 10px;
+
+  border-radius: 999px;
+
+  background: #191c23;
+  border: 1px solid #292e39;
+
+  color: #aaa1ba;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.pattern-grid,
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 11px;
+
+  margin-top: 34px;
+}
+
+.pattern-tile,
+.focus-target {
+  aspect-ratio: 1;
+
+  border: 1px solid #313642;
+  border-radius: 20px;
+
+  background: #181b22;
+
+  color: #6e7580;
+
+  font-size: 30px;
+
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease;
+}
+
+.pattern-tile-active {
+  background: #9563ff;
+
+  border-color: #b28dff;
+
+  box-shadow:
+    0 0 30px rgba(149, 99, 255, 0.45);
+
+  transform: scale(0.94);
+}
+
+.focus-target-active {
+  background: #9563ff;
+
+  border-color: #b48fff;
+
+  color: white;
+
+  box-shadow:
+    0 0 28px rgba(149, 99, 255, 0.42);
+}
+
+.math-card,
+.sequence-card,
+.stroop-card,
+.rotation-card {
+  margin-top: 30px;
+
+  padding: 25px;
+
+  border-radius: 25px;
+
+  background: #15181f;
+  border: 1px solid #292e39;
+}
+
+.math-problem,
+.sequence-display,
+.stroop-word,
+.rotation-original {
+  min-height: 140px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 52px;
+  font-weight: 800;
+
+  letter-spacing: -0.05em;
+}
+
+.math-options,
+.stroop-options,
+.rotation-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+}
+
+.math-options button,
+.stroop-options button,
+.rotation-options button {
+  min-height: 66px;
+
+  border: 1px solid #303542;
+  border-radius: 17px;
+
+  background: #1c2028;
+
+  color: white;
+
+  font-weight: 800;
+}
+
+.sequence-input {
+  width: 100%;
+
+  margin-bottom: 12px;
+
+  padding: 18px;
+
+  border-radius: 17px;
+
+  border: 1px solid #303542;
+
+  background: #101218;
+
+  color: white;
+
+  text-align: center;
+
+  font-size: 24px;
+
+  outline: none;
+}
+
+.stroop-word {
+  font-size: 55px;
+}
+
+.rotation-options span {
+  display: inline-block;
+
+  font-size: 35px;
+}
+
+
+/* =========================================================
+   NEW CRAVING INTRO
+   ========================================================= */
+
+.craving-intro-card {
+  margin-top: 32px;
+
+  padding: 28px;
+
+  border-radius: 27px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #171923,
+      #211a31
+    );
+
+  border: 1px solid #372a50;
+}
+
+.craving-intro-card h2 {
+  margin-bottom: 12px;
+
+  font-size: 27px;
+  line-height: 1.15;
+}
+
+.craving-intro-card p {
+  margin-bottom: 0;
+
+  color: #969daa;
+
+  line-height: 1.55;
+}
+
+.craving-scale {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 9px;
+
+  margin-top: 25px;
+}
+
+.craving-scale button {
+  min-height: 54px;
+
+  border: 1px solid #2c313c;
+  border-radius: 16px;
+
+  background: #171a21;
+
+  color: #a3aab5;
+
+  font-weight: 800;
+}
+
+.craving-scale button.selected {
+  background: #7657ff;
+  border-color: #9878ff;
+
+  color: white;
+}
+
+.recommended-game-card {
+  padding: 22px;
+
+  margin-top: 18px;
+
+  border-radius: 23px;
+
+  background: #15181f;
+  border: 1px solid #2c313b;
+}
+
+.recommended-game-card h2 {
+  margin-bottom: 7px;
+}
+
+.recommended-game-card p {
+  margin-bottom: 0;
+
+  color: #8e95a1;
+
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   GAME RESULTS
+   ========================================================= */
+
+.game-result-card {
+  margin-top: 25px;
+
+  padding: 25px;
+
+  border-radius: 25px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #171923,
+      #1c2521
+    );
+
+  border: 1px solid #2d4036;
+}
+
+.game-result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 13px 0;
+
+  border-bottom: 1px solid #272d31;
+}
+
+.game-result-row:last-child {
+  border-bottom: 0;
+}
+
+.game-result-row span {
+  color: #858d98;
+
+  font-size: 12px;
+}
+
+.game-result-row strong {
+  font-size: 14px;
+}
+
+.coin-earned {
+  color: #f0bf67 !important;
+}
+
+.craving-change {
+  margin-top: 18px;
+
+  padding: 16px;
+
+  border-radius: 17px;
+
+  background: #1c2822;
+
+  color: #8de0b0;
+
+  text-align: center;
+
+  font-weight: 800;
+}
+
+@media (max-width: 380px) {
+  .games-grid {
+    gap: 9px;
+  }
+
+  .game-card {
+    min-height: 180px;
+    padding: 15px;
+  }
+}
+
+
+/* =========================================================
+   GAMES NAV + SUMMARY
+   ========================================================= */
+
+.bottom-nav {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.bottom-nav button {
+  font-size: 9px;
+}
+
+.games-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 8px;
+
+  margin-top: 6px;
+  margin-bottom: 14px;
+}
+
+.games-summary > div {
+  min-width: 0;
+
+  padding: 13px 6px;
+
+  border-radius: 17px;
+
+  background: #15181f;
+  border: 1px solid #292e39;
+
+  text-align: center;
+}
+
+.games-summary span {
+  display: block;
+
+  color: #f5f7fb;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.games-summary small {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #747b87;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.level-pill small {
+  margin-top: 3px;
+
+  color: #f0bf67;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.primary-action:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+
+/* =========================================================
+   NIC
+   ========================================================= */
+
+.nic-screen {
+  padding-top: 8px;
+}
+
+.nic-loading {
+  min-height: 60vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: #8d949f;
+}
+
+.nic-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 15px;
+}
+
+.nic-title-row h1 {
+  margin-bottom: 5px;
+}
+
+.nic-title-row p {
+  margin: 0;
+
+  color: #858c98;
+  font-size: 12px;
+}
+
+.nic-coins {
+  flex-shrink: 0;
+
+  padding: 10px 12px;
+
+  border-radius: 999px;
+
+  background: #29231a;
+  border: 1px solid #493c24;
+
+  color: #f0bf67;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   NIC AVATAR STAGE
+   ========================================================= */
+
+.nic-stage {
+  position: relative;
+
+  min-height: 330px;
+
+  margin-top: 20px;
+
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      #282138,
+      #14171d 68%
+    );
+
+  border: 1px solid #2a2f39;
+}
+
+.nic-bg-default {
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      #282138,
+      #14171d 68%
+    );
+}
+
+.nic-bg-night_city {
+  background:
+    linear-gradient(
+      180deg,
+      #151125 0%,
+      #23233a 58%,
+      #0d1016 100%
+    );
+}
+
+.nic-bg-night_city::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  height: 90px;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #171a21 0,
+      #171a21 28px,
+      #25202f 29px,
+      #25202f 48px
+    );
+}
+
+.nic-bg-space {
+  background:
+    radial-gradient(
+      circle at 25% 20%,
+      #60478b 0 2px,
+      transparent 3px
+    ),
+    radial-gradient(
+      circle at 75% 32%,
+      white 0 1px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 50% 65%,
+      #9563ff 0 2px,
+      transparent 3px
+    ),
+    #080b18;
+
+  background-size:
+    70px 70px,
+    95px 95px,
+    125px 125px;
+}
+
+.nic-bg-gym {
+  background:
+    linear-gradient(
+      180deg,
+      #292d32,
+      #16191e
+    );
+}
+
+
+/* =========================================================
+   NIC BODY
+   ========================================================= */
+
+.nic-effect {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 220px;
+  height: 270px;
+
+  z-index: 2;
+}
+
+.nic-body {
+  position: relative;
+
+  width: 105px;
+  height: 205px;
+
+  border-radius:
+    25px
+    25px
+    30px
+    30px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #353941,
+      #16191e
+    );
+
+  border: 2px solid #454b55;
+
+  box-shadow:
+    inset 8px 8px 20px
+      rgba(255, 255, 255, 0.045),
+    inset -8px -8px 20px
+      rgba(0, 0, 0, 0.3),
+    0 25px 45px
+      rgba(0, 0, 0, 0.35);
+
+  z-index: 3;
+}
+
+.nic-body::after {
+  content: "NIC";
+
+  position: absolute;
+
+  bottom: 22px;
+  left: 0;
+  right: 0;
+
+  text-align: center;
+
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+
+  color: rgba(
+    255,
+    255,
+    255,
+    0.22
+  );
+}
+
+.nic-mouthpiece {
+  position: absolute;
+
+  width: 54px;
+  height: 36px;
+
+  left: 50%;
+  top: -29px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius:
+    15px
+    15px
+    8px
+    8px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #353941,
+      #15181d
+    );
+
+  border: 2px solid #454b55;
+  border-bottom: none;
+}
+
+
+/* BODY COLORS */
+
+.nic-body_white {
+  background:
+    linear-gradient(
+      145deg,
+      #f0f1f3,
+      #aeb3ba
+    );
+
+  border-color: #d6d9dd;
+}
+
+.nic-body_purple {
+  background:
+    linear-gradient(
+      145deg,
+      #9d70ff,
+      #573c91
+    );
+
+  border-color: #b897ff;
+}
+
+.nic-body_blue {
+  background:
+    linear-gradient(
+      145deg,
+      #5795ff,
+      #274b91
+    );
+
+  border-color: #73a6ff;
+}
+
+.nic-body_gold {
+  background:
+    linear-gradient(
+      145deg,
+      #f2ca72,
+      #9e742d
+    );
+
+  border-color: #f8db98;
+}
+
+.nic-body_galaxy {
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      #ff7eea,
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 70% 70%,
+      #5b8cff,
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      #442b76,
+      #11152b
+    );
+
+  border-color: #9f82ff;
+}
+
+
+/* =========================================================
+   FACE
+   ========================================================= */
+
+.nic-face {
+  position: absolute;
+
+  top: 48px;
+  left: 18px;
+  right: 18px;
+
+  height: 64px;
+}
+
+.nic-eyes {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0 9px;
+}
+
+.nic-eyes span {
+  display: block;
+
+  width: 10px;
+  height: 14px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 8px
+      rgba(255, 255, 255, 0.2);
+}
+
+.nic-mouth {
+  width: 28px;
+  height: 12px;
+
+  margin: 17px auto 0;
+
+  border-bottom:
+    3px solid #ffffff;
+
+  border-radius:
+    0 0 20px 20px;
+}
+
+.nic-face_focused
+.nic-eyes span {
+  height: 5px;
+
+  border-radius: 5px;
+
+  transform: rotate(8deg);
+}
+
+.nic-face_focused
+.nic-eyes span:last-child {
+  transform: rotate(-8deg);
+}
+
+.nic-face_focused
+.nic-mouth {
+  width: 24px;
+
+  border-radius: 0;
+
+  border-bottom-width: 2px;
+}
+
+.nic-face_cool
+.nic-mouth {
+  width: 25px;
+
+  border-radius: 0;
+}
+
+.nic-face_wink
+.nic-eyes span:first-child {
+  height: 3px;
+
+  margin-top: 5px;
+
+  border-radius: 3px;
+}
+
+
+/* =========================================================
+   LIMBS
+   ========================================================= */
+
+.nic-arm,
+.nic-leg {
+  position: absolute;
+
+  width: 6px;
+
+  border-radius: 999px;
+
+  background: #777e89;
+}
+
+.nic-arm {
+  height: 55px;
+
+  top: 110px;
+}
+
+.nic-arm-left {
+  left: -18px;
+
+  transform: rotate(17deg);
+}
+
+.nic-arm-right {
+  right: -18px;
+
+  transform: rotate(-17deg);
+}
+
+.nic-leg {
+  height: 45px;
+
+  bottom: -35px;
+}
+
+.nic-leg-left {
+  left: 31px;
+
+  transform: rotate(8deg);
+}
+
+.nic-leg-right {
+  right: 31px;
+
+  transform: rotate(-8deg);
+}
+
+
+/* =========================================================
+   ACCESSORIES
+   ========================================================= */
+
+.nic-accessory {
+  position: absolute;
+
+  z-index: 10;
+
+  pointer-events: none;
+}
+
+.nic-glasses {
+  top: 42px;
+  left: 11px;
+
+  font-size: 45px;
+}
+
+.nic-headphones {
+  top: 24px;
+  left: 14px;
+
+  font-size: 52px;
+}
+
+.nic-crown {
+  top: -54px;
+  left: 28px;
+
+  font-size: 47px;
+}
+
+.nic-chain {
+  top: 103px;
+  left: 27px;
+
+  font-size: 42px;
+
+  color: #f0bf67;
+}
+
+
+/* =========================================================
+   EFFECTS
+   ========================================================= */
+
+.nic-effect-purple_aura::before {
+  content: "";
+
+  position: absolute;
+
+  width: 170px;
+  height: 240px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(149, 99, 255, 0.24);
+
+  filter: blur(25px);
+
+  animation:
+    nicPulse
+    2s
+    ease-in-out
+    infinite;
+}
+
+.nic-effect-lightning::before {
+  content: "ϟ   ϟ";
+
+  position: absolute;
+
+  color: #a986ff;
+
+  font-size: 55px;
+
+  letter-spacing: 55px;
+
+  transform:
+    translateX(26px);
+
+  animation:
+    nicPulse
+    1s
+    ease-in-out
+    infinite;
+}
+
+.nic-effect-legendary_aura::before {
+  content: "";
+
+  position: absolute;
+
+  width: 185px;
+  height: 245px;
+
+  border-radius: 50%;
+
+  border:
+    3px solid
+    rgba(
+      240,
+      191,
+      103,
+      0.8
+    );
+
+  box-shadow:
+    0 0 35px
+      rgba(
+        240,
+        191,
+        103,
+        0.55
+      ),
+    inset 0 0 30px
+      rgba(
+        149,
+        99,
+        255,
+        0.35
+      );
+
+  animation:
+    nicPulse
+    1.6s
+    ease-in-out
+    infinite;
+}
+
+@keyframes nicPulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(0.96);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+
+/* =========================================================
+   NIC DETAILS
+   ========================================================= */
+
+.nic-mood {
+  margin-top: 12px;
+
+  padding: 14px 16px;
+
+  border-radius: 17px;
+
+  background: #171a21;
+  border: 1px solid #292e39;
+
+  color: #a8afb9;
+
+  font-size: 12px;
+  line-height: 1.45;
+
+  text-align: center;
+}
+
+.nic-stats {
+  display: grid;
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 8px;
+
+  margin-top: 12px;
+}
+
+.nic-stats > div {
+  padding: 14px 4px;
+
+  border-radius: 17px;
+
+  background: #15181f;
+  border: 1px solid #292e39;
+
+  text-align: center;
+}
+
+.nic-stats strong {
+  display: block;
+
+  font-size: 18px;
+}
+
+.nic-stats span {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #737a86;
+
+  font-size: 8px;
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   NIC TABS
+   ========================================================= */
+
+.nic-tabs {
+  display: grid;
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 6px;
+
+  padding: 5px;
+
+  margin-top: 18px;
+  margin-bottom: 12px;
+
+  border-radius: 18px;
+
+  background: #13161c;
+
+  border: 1px solid #252a34;
+}
+
+.nic-tabs button {
+  border: none;
+
+  padding: 12px;
+
+  border-radius: 13px;
+
+  background: transparent;
+
+  color: #717884;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.nic-tabs button.active {
+  background: #282034;
+
+  color: #c3a5ff;
+}
+
+
+/* =========================================================
+   NIC PANELS
+   ========================================================= */
+
+.nic-panel {
+  padding: 20px;
+
+  border-radius: 22px;
+
+  background: #15181f;
+
+  border: 1px solid #292e39;
+}
+
+.nic-setting-row,
+.nic-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 15px;
+}
+
+.nic-setting-row strong {
+  font-size: 18px;
+}
+
+.nic-setting-row p {
+  margin:
+    4px 0 0;
+
+  color: #7d8490;
+
+  font-size: 11px;
+}
+
+.nic-setting-row button {
+  border: none;
+
+  padding: 9px 12px;
+
+  border-radius: 12px;
+
+  background: #292034;
+
+  color: #c3a5ff;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.nic-name-editor input {
+  width: 100%;
+
+  padding: 16px;
+
+  margin-bottom: 10px;
+
+  border-radius: 16px;
+
+  border:
+    1px solid #303542;
+
+  outline: none;
+
+  background: #101218;
+
+  color: white;
+
+  font-size: 16px;
+}
+
+.nic-equipped {
+  margin-top: 25px;
+}
+
+.nic-equipped-row {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 13px 0;
+
+  border-bottom:
+    1px solid #252a34;
+
+  font-size: 12px;
+}
+
+.nic-equipped-row:last-child {
+  border-bottom: none;
+}
+
+.nic-equipped-row span {
+  color: #777e89;
+}
+
+.nic-equipped-row strong {
+  text-align: right;
+}
+
+
+/* =========================================================
+   SHOP + CLOSET
+   ========================================================= */
+
+.nic-section-heading {
+  margin-bottom: 18px;
+}
+
+.nic-section-heading h2 {
+  margin: 0;
+
+  font-size: 21px;
+}
+
+.nic-section-heading > span {
+  color: #f0bf67;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.nic-category-scroll {
+  display: flex;
+
+  gap: 7px;
+
+  overflow-x: auto;
+
+  padding-bottom: 12px;
+
+  scrollbar-width: none;
+}
+
+.nic-category-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.nic-category-scroll button {
+  flex-shrink: 0;
+
+  border:
+    1px solid #2c313c;
+
+  padding: 9px 12px;
+
+  border-radius: 999px;
+
+  background: #171a21;
+
+  color: #7f8691;
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.nic-category-scroll button.active {
+  background: #292034;
+
+  border-color: #48366b;
+
+  color: #c3a5ff;
+}
+
+.nic-item-list {
+  display: grid;
+
+  gap: 9px;
+}
+
+.nic-item-card {
+  display: grid;
+
+  grid-template-columns:
+    48px
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 12px;
+
+  border-radius: 17px;
+
+  background: #191c23;
+
+  border:
+    1px solid #292e39;
+}
+
+.nic-item-preview {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #242832;
+
+  font-size: 20px;
+}
+
+.nic-preview-body_purple {
+  background: #7657ff;
+}
+
+.nic-preview-body_blue {
+  background: #477fd9;
+}
+
+.nic-preview-body_gold {
+  background: #b99047;
+}
+
+.nic-preview-body_white {
+  background: #d8dbe0;
+
+  color: #2a2d32;
+}
+
+.nic-preview-body_galaxy {
+  background:
+    linear-gradient(
+      145deg,
+      #934fff,
+      #253785
+    );
+}
+
+.nic-item-info {
+  min-width: 0;
+}
+
+.nic-item-name-row {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  min-width: 0;
+}
+
+.nic-item-name-row strong {
+  overflow: hidden;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  font-size: 12px;
+}
+
+.nic-item-info p {
+  margin: 5px 0 0;
+
+  color: #737a86;
+
+  font-size: 9px;
+}
+
+.nic-rarity {
+  flex-shrink: 0;
+
+  padding: 3px 5px;
+
+  border-radius: 999px;
+
+  font-size: 6px;
+  font-weight: 900;
+
+  text-transform: uppercase;
+}
+
+.nic-rarity-common {
+  color: #9da4b0;
+
+  background: #282c34;
+}
+
+.nic-rarity-rare {
+  color: #8db4ff;
+
+  background: #1d2940;
+}
+
+.nic-rarity-epic {
+  color: #c199ff;
+
+  background: #2b2142;
+}
+
+.nic-rarity-legendary {
+  color: #f0bf67;
+
+  background: #332918;
+}
+
+.nic-item-button {
+  border: none;
+
+  min-width: 62px;
+
+  padding: 9px 10px;
+
+  border-radius: 11px;
+
+  background: #292034;
+
+  color: #c3a5ff;
+
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.nic-item-button.equipped {
+  background: #1d2d27;
+
+  color: #8ee2b5;
+}
+
+.nic-item-button:disabled {
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   MESSAGES
+   ========================================================= */
+
+.nic-message,
+.nic-error {
+  margin-top: 10px;
+
+  padding: 12px 14px;
+
+  border-radius: 14px;
+
+  font-size: 11px;
+}
+
+.nic-message {
+  background: #1d2d27;
+
+  color: #8ee2b5;
+}
+
+.nic-error {
+  background: #2c1e22;
+
+  color: #e8a2aa;
+}
+
+
+@media (max-width: 380px) {
+  .nic-stage {
+    min-height: 300px;
+  }
+
+  .nic-stats {
+    gap: 5px;
+  }
+
+  .nic-stats strong {
+    font-size: 16px;
+  }
+
+  .nic-item-card {
+    grid-template-columns:
+      44px
+      minmax(0, 1fr)
+      auto;
+
+    gap: 8px;
+  }
+}
+
+
+/* =========================================================
+   NIC ITEM PREVIEWS
+   ========================================================= */
+
+.nic-item-preview {
+  overflow: hidden;
+
+  font-size: 22px;
+
+  position: relative;
+}
+
+.nic-item-preview span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+
+/* BODY PREVIEWS */
+
+.nic-preview-body_black {
+  background:
+    linear-gradient(
+      145deg,
+      #3b3f47,
+      #15181d
+    );
+}
+
+.nic-preview-body_white {
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #b8bdc5
+    );
+
+  color: #15181d;
+}
+
+.nic-preview-body_purple {
+  background:
+    linear-gradient(
+      145deg,
+      #aa7cff,
+      #553291
+    );
+}
+
+.nic-preview-body_blue {
+  background:
+    linear-gradient(
+      145deg,
+      #69a5ff,
+      #284b91
+    );
+}
+
+.nic-preview-body_gold {
+  background:
+    linear-gradient(
+      145deg,
+      #f5d17c,
+      #9c712c
+    );
+}
+
+.nic-preview-body_galaxy {
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      #ff78e7,
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 70% 70%,
+      #5b8cff,
+      transparent 30%
+    ),
+    #291d55;
+}
+
+
+/* EFFECT PREVIEWS */
+
+.nic-preview-purple_aura {
+  background: #241b3c;
+
+  box-shadow:
+    inset 0 0 18px
+      rgba(149, 99, 255, 0.6);
+
+  color: #bb9cff;
+}
+
+.nic-preview-lightning {
+  background: #29243a;
+
+  color: #c2a6ff;
+}
+
+.nic-preview-legendary_aura {
+  background:
+    linear-gradient(
+      145deg,
+      #4c3a1c,
+      #241b34
+    );
+
+  color: #f4ca72;
+}
+
+
+/* BACKGROUND PREVIEWS */
+
+.nic-preview-night_city {
+  background:
+    linear-gradient(
+      180deg,
+      #30234d,
+      #131721
+    );
+}
+
+.nic-preview-space {
+  background:
+    radial-gradient(
+      circle at 25% 25%,
+      white 0 1px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 70% 65%,
+      #9563ff 0 2px,
+      transparent 3px
+    ),
+    #080b18;
+}
+
+.nic-preview-gym {
+  background:
+    linear-gradient(
+      145deg,
+      #444950,
+      #191c21
+    );
+}
+
+
+/* ACCESSORY PREVIEWS */
+
+.nic-preview-sunglasses,
+.nic-preview-headphones,
+.nic-preview-crown,
+.nic-preview-gold_chain {
+  background:
+    #22262e;
+
+  font-size: 24px;
+}
+
+
+/* =========================================================
+   EXTRA NIC ACCESSORIES
+   ========================================================= */
+
+.nic-baseball-cap {
+  top: -58px;
+  left: 24px;
+  font-size: 52px;
+}
+
+.nic-beanie {
+  top: -60px;
+  left: 28px;
+  font-size: 48px;
+}
+
+.nic-halo {
+  top: -68px;
+  left: 25px;
+  font-size: 52px;
+}
+
+.nic-devil-horns {
+  top: -58px;
+  left: 26px;
+  font-size: 50px;
+}
+
+.nic-bow-tie {
+  top: 104px;
+  left: 31px;
+  font-size: 38px;
+}
+
+.nic-scarf {
+  top: 91px;
+  left: 24px;
+  font-size: 50px;
+}
+
+.nic-monocle {
+  top: 37px;
+  left: 35px;
+  font-size: 41px;
+}
+
+.nic-eye-patch {
+  top: 31px;
+  left: 28px;
+  font-size: 45px;
+}
+
+.nic-mustache {
+  top: 66px;
+  left: 31px;
+  font-size: 39px;
+}
+
+.nic-backpack {
+  top: 89px;
+  right: -33px;
+  font-size: 48px;
+  z-index: 1;
+}
+
+.nic-cape {
+  top: 74px;
+  left: -31px;
+  font-size: 58px;
+  z-index: 1;
+}
+
+.nic-star-glasses {
+  top: 35px;
+  left: 27px;
+  font-size: 48px;
+}
+
+.nic-heart-glasses {
+  top: 35px;
+  left: 27px;
+  font-size: 48px;
+}
+
+.nic-party-hat {
+  top: -64px;
+  left: 27px;
+  font-size: 51px;
+}
+
+.nic-wizard-hat {
+  top: -72px;
+  left: 22px;
+  font-size: 58px;
+}
+
+
+/* SHOP PREVIEWS */
+
+.nic-preview-baseball_cap,
+.nic-preview-beanie,
+.nic-preview-halo,
+.nic-preview-devil_horns,
+.nic-preview-bow_tie,
+.nic-preview-scarf,
+.nic-preview-monocle,
+.nic-preview-eye_patch,
+.nic-preview-mustache,
+.nic-preview-backpack,
+.nic-preview-cape,
+.nic-preview-star_glasses,
+.nic-preview-heart_glasses,
+.nic-preview-party_hat,
+.nic-preview-wizard_hat {
+  background: #22262e;
+  font-size: 24px;
+}
+
+
+/* =========================================================
+   NIC ACCESSORIES V2
+   Clean CSS-drawn accessories
+   ========================================================= */
+
+.nic-wearable {
+  position: absolute;
+  pointer-events: none;
+  z-index: 12;
+}
+
+
+/* ---------------------------------------------------------
+   SUNGLASSES
+   --------------------------------------------------------- */
+
+.nic-wearable-sunglasses {
+  top: 48px;
+  left: 17px;
+
+  width: 71px;
+  height: 24px;
+}
+
+.nic-wearable-sunglasses::before,
+.nic-wearable-sunglasses::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+
+  width: 27px;
+  height: 18px;
+
+  border-radius: 7px 7px 11px 11px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #252a31,
+      #050607
+    );
+
+  border: 2px solid #111318;
+}
+
+.nic-wearable-sunglasses::before {
+  left: 3px;
+}
+
+.nic-wearable-sunglasses::after {
+  right: 3px;
+}
+
+.nic-wearable-sunglasses {
+  border-top: 3px solid #111318;
+}
+
+
+/* ---------------------------------------------------------
+   BASEBALL CAP
+   --------------------------------------------------------- */
+
+.nic-wearable-baseball_cap {
+  top: -33px;
+  left: 16px;
+
+  width: 73px;
+  height: 43px;
+
+  border-radius:
+    40px 40px 13px 13px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #7260dc,
+      #49358e
+    );
+
+  transform: rotate(-5deg);
+
+  border:
+    2px solid rgba(
+      255,
+      255,
+      255,
+      0.16
+    );
+}
+
+.nic-wearable-baseball_cap::after {
+  content: "";
+
+  position: absolute;
+
+  right: -18px;
+  bottom: 2px;
+
+  width: 38px;
+  height: 11px;
+
+  border-radius: 0 12px 12px 0;
+
+  background: #49358e;
+
+  transform: rotate(6deg);
+}
+
+
+/* ---------------------------------------------------------
+   BEANIE
+   --------------------------------------------------------- */
+
+.nic-wearable-beanie {
+  top: -31px;
+  left: 18px;
+
+  width: 69px;
+  height: 40px;
+
+  border-radius:
+    38px 38px 13px 13px;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #86594b 0,
+      #86594b 5px,
+      #74473b 6px,
+      #74473b 10px
+    );
+
+  border-bottom:
+    8px solid #643b32;
+}
+
+.nic-wearable-beanie::after {
+  content: "";
+
+  position: absolute;
+
+  top: -10px;
+  left: 28px;
+
+  width: 14px;
+  height: 14px;
+
+  border-radius: 50%;
+
+  background: #74473b;
+}
+
+
+/* ---------------------------------------------------------
+   HALO
+   --------------------------------------------------------- */
+
+.nic-wearable-halo {
+  top: -42px;
+  left: 17px;
+
+  width: 72px;
+  height: 20px;
+
+  border-radius: 50%;
+
+  border: 5px solid #f4d889;
+
+  box-shadow:
+    0 0 12px
+      rgba(
+        244,
+        216,
+        137,
+        0.55
+      );
+}
+
+
+/* ---------------------------------------------------------
+   DEVIL HORNS
+   --------------------------------------------------------- */
+
+.nic-wearable-devil_horns {
+  top: -24px;
+  left: 14px;
+
+  width: 77px;
+  height: 30px;
+}
+
+.nic-wearable-devil_horns::before,
+.nic-wearable-devil_horns::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  width: 19px;
+  height: 27px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #c94d69,
+      #6f2338
+    );
+
+  clip-path:
+    polygon(
+      50% 0,
+      100% 100%,
+      0 100%
+    );
+}
+
+.nic-wearable-devil_horns::before {
+  left: 4px;
+
+  transform:
+    rotate(-18deg);
+}
+
+.nic-wearable-devil_horns::after {
+  right: 4px;
+
+  transform:
+    rotate(18deg);
+}
+
+
+/* ---------------------------------------------------------
+   CROWN
+   --------------------------------------------------------- */
+
+.nic-wearable-crown {
+  top: -35px;
+  left: 21px;
+
+  width: 63px;
+  height: 40px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f0c760,
+      #a47725
+    );
+
+  clip-path:
+    polygon(
+      0 32%,
+      20% 63%,
+      36% 8%,
+      54% 63%,
+      75% 3%,
+      100% 35%,
+      92% 100%,
+      8% 100%
+    );
+
+  filter:
+    drop-shadow(
+      0 4px 6px
+      rgba(0, 0, 0, 0.25)
+    );
+}
+
+
+/* ---------------------------------------------------------
+   PARTY HAT
+   --------------------------------------------------------- */
+
+.nic-wearable-party_hat {
+  top: -48px;
+  left: 32px;
+
+  width: 43px;
+  height: 52px;
+
+  clip-path:
+    polygon(
+      50% 0,
+      100% 100%,
+      0 100%
+    );
+
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #9b6cff 0,
+      #9b6cff 9px,
+      #55a7ff 10px,
+      #55a7ff 18px
+    );
+}
+
+.nic-wearable-party_hat::after {
+  content: "";
+
+  position: absolute;
+
+  top: -7px;
+  left: 17px;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: #f3ca67;
+}
+
+
+/* ---------------------------------------------------------
+   WIZARD HAT
+   --------------------------------------------------------- */
+
+.nic-wearable-wizard_hat {
+  top: -62px;
+  left: 16px;
+
+  width: 74px;
+  height: 75px;
+}
+
+.nic-wearable-wizard_hat::before {
+  content: "";
+
+  position: absolute;
+
+  left: 20px;
+  top: 0;
+
+  width: 45px;
+  height: 62px;
+
+  clip-path:
+    polygon(
+      50% 0,
+      100% 100%,
+      0 100%
+    );
+
+  background:
+    linear-gradient(
+      145deg,
+      #6040a6,
+      #291b50
+    );
+
+  transform:
+    rotate(7deg);
+}
+
+.nic-wearable-wizard_hat::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: 3px;
+  left: 3px;
+
+  width: 70px;
+  height: 14px;
+
+  border-radius: 50%;
+
+  background: #382267;
+}
+
+
+/* ---------------------------------------------------------
+   BOW TIE
+   --------------------------------------------------------- */
+
+.nic-wearable-bow_tie {
+  top: 107px;
+  left: 32px;
+
+  width: 42px;
+  height: 24px;
+}
+
+.nic-wearable-bow_tie::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      #704fd0,
+      #a378ff
+    );
+
+  clip-path:
+    polygon(
+      0 15%,
+      42% 42%,
+      50% 26%,
+      58% 42%,
+      100% 15%,
+      100% 85%,
+      58% 58%,
+      50% 74%,
+      42% 58%,
+      0 85%
+    );
+}
+
+
+/* ---------------------------------------------------------
+   GOLD CHAIN
+   --------------------------------------------------------- */
+
+.nic-wearable-gold_chain {
+  top: 101px;
+  left: 23px;
+
+  width: 61px;
+  height: 49px;
+
+  border-left: 5px solid #d5aa45;
+  border-right: 5px solid #d5aa45;
+  border-bottom: 5px solid #d5aa45;
+
+  border-radius:
+    0 0 35px 35px;
+
+  transform: scaleX(0.85);
+}
+
+.nic-wearable-gold_chain::after {
+  content: "N";
+
+  position: absolute;
+
+  left: 19px;
+  bottom: -18px;
+
+  width: 22px;
+  height: 22px;
+
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #d5aa45;
+
+  color: #493611;
+
+  font-size: 11px;
+  font-weight: 900;
+}
+
+
+/* ---------------------------------------------------------
+   SCARF
+   --------------------------------------------------------- */
+
+.nic-wearable-scarf {
+  top: 94px;
+  left: 18px;
+
+  width: 70px;
+  height: 31px;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #b84f67,
+      #762b3e
+    );
+}
+
+.nic-wearable-scarf::after {
+  content: "";
+
+  position: absolute;
+
+  right: 6px;
+  top: 21px;
+
+  width: 16px;
+  height: 56px;
+
+  border-radius: 0 0 8px 8px;
+
+  background:
+    linear-gradient(
+      #8c3549,
+      #642233
+    );
+
+  transform:
+    rotate(-7deg);
+}
+
+
+/* ---------------------------------------------------------
+   MONOCLE
+   --------------------------------------------------------- */
+
+.nic-wearable-monocle {
+  top: 45px;
+  left: 55px;
+
+  width: 24px;
+  height: 24px;
+
+  border-radius: 50%;
+
+  border: 3px solid #c7a75c;
+}
+
+.nic-wearable-monocle::after {
+  content: "";
+
+  position: absolute;
+
+  right: -5px;
+  top: 18px;
+
+  width: 2px;
+  height: 49px;
+
+  background: #c7a75c;
+
+  transform:
+    rotate(-8deg);
+}
+
+
+/* ---------------------------------------------------------
+   EYE PATCH
+   --------------------------------------------------------- */
+
+.nic-wearable-eye_patch {
+  top: 46px;
+  left: 20px;
+
+  width: 30px;
+  height: 21px;
+
+  border-radius:
+    50% 50% 45% 45%;
+
+  background: #121419;
+}
+
+.nic-wearable-eye_patch::after {
+  content: "";
+
+  position: absolute;
+
+  top: -8px;
+  left: 18px;
+
+  width: 61px;
+  height: 3px;
+
+  background: #15171b;
+
+  transform:
+    rotate(13deg);
+}
+
+
+/* ---------------------------------------------------------
+   MUSTACHE
+   --------------------------------------------------------- */
+
+.nic-wearable-mustache {
+  top: 78px;
+  left: 30px;
+
+  width: 46px;
+  height: 20px;
+}
+
+.nic-wearable-mustache::before,
+.nic-wearable-mustache::after {
+  content: "";
+
+  position: absolute;
+
+  width: 25px;
+  height: 12px;
+
+  background: #24262b;
+
+  border-radius:
+    50% 50% 65% 30%;
+}
+
+.nic-wearable-mustache::before {
+  left: 1px;
+
+  transform:
+    rotate(15deg);
+}
+
+.nic-wearable-mustache::after {
+  right: 1px;
+
+  transform:
+    scaleX(-1)
+    rotate(15deg);
+}
+
+
+/* ---------------------------------------------------------
+   BACKPACK
+   --------------------------------------------------------- */
+
+.nic-wearable-backpack {
+  top: 71px;
+  right: -25px;
+
+  width: 44px;
+  height: 91px;
+
+  border-radius:
+    17px 13px 14px 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #42546a,
+      #232d3a
+    );
+
+  border: 2px solid #536b86;
+
+  z-index: -1;
+}
+
+
+/* ---------------------------------------------------------
+   CAPE
+   --------------------------------------------------------- */
+
+.nic-wearable-cape {
+  top: 60px;
+  left: -17px;
+
+  width: 139px;
+  height: 158px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #753e9f,
+      #3c205e
+    );
+
+  clip-path:
+    polygon(
+      27% 0,
+      73% 0,
+      100% 100%,
+      50% 88%,
+      0 100%
+    );
+
+  z-index: -1;
+}
+
+
+/* ---------------------------------------------------------
+   HEADPHONES
+   --------------------------------------------------------- */
+
+.nic-wearable-headphones {
+  top: 26px;
+  left: 5px;
+
+  width: 95px;
+  height: 78px;
+}
+
+.nic-headphone-band {
+  position: absolute;
+
+  left: 14px;
+  top: 0;
+
+  width: 67px;
+  height: 58px;
+
+  border:
+    7px solid #292d35;
+
+  border-bottom: none;
+
+  border-radius:
+    45px 45px 0 0;
+}
+
+.nic-headphone-ear {
+  position: absolute;
+
+  top: 36px;
+
+  width: 17px;
+  height: 35px;
+
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      #454c58,
+      #252932
+    );
+}
+
+.nic-headphone-left {
+  left: 4px;
+}
+
+.nic-headphone-right {
+  right: 4px;
+}
+
+
+/* ---------------------------------------------------------
+   STAR GLASSES
+   --------------------------------------------------------- */
+
+.nic-wearable-star_glasses,
+.nic-wearable-heart_glasses {
+  top: 42px;
+  left: 15px;
+
+  width: 75px;
+  height: 32px;
+}
+
+.nic-star-lens,
+.nic-heart-lens {
+  position: absolute;
+
+  top: 0;
+
+  font-size: 26px;
+  line-height: 26px;
+}
+
+.nic-star-lens {
+  color: #f1c75b;
+}
+
+.nic-heart-lens {
+  color: #d96b8f;
+}
+
+.nic-star-left,
+.nic-heart-left {
+  left: 4px;
+}
+
+.nic-star-right,
+.nic-heart-right {
+  right: 4px;
+}
+
+.nic-glasses-bridge {
+  position: absolute;
+
+  top: 13px;
+  left: 30px;
+
+  width: 15px;
+  height: 3px;
+
+  background: #30343c;
+}
+
+
+/* ---------------------------------------------------------
+   SHOP PREVIEW CLEANUP
+   --------------------------------------------------------- */
+
+.nic-item-preview {
+  background: #20242c;
+}
+
+.nic-item-preview span {
+  font-size: 18px;
+}
+
+.nic-preview-sunglasses::after {
+  content: "◉ ◉";
+
+  color: #777f8d;
+
+  font-size: 15px;
+}
+
+.nic-preview-headphones::after {
+  content: "◠";
+
+  color: #8d95a3;
+
+  font-size: 27px;
+}
+
+.nic-preview-crown::after {
+  content: "♛";
+
+  color: #dcb95d;
+
+  font-size: 23px;
+}
+
+.nic-preview-gold_chain::after {
+  content: "⌄";
+
+  color: #dcb95d;
+
+  font-size: 28px;
+}
+
+.nic-preview-baseball_cap::after {
+  content: "CAP";
+
+  color: #9d83ef;
+
+  font-size: 8px;
+  font-weight: 900;
+}
+
+.nic-preview-beanie::after {
+  content: "▰";
+
+  color: #966052;
+
+  font-size: 22px;
+}
+
+.nic-preview-halo::after {
+  content: "○";
+
+  color: #efd077;
+
+  font-size: 28px;
+}
+
+.nic-preview-devil_horns::after {
+  content: "⌃⌃";
+
+  color: #ce526e;
+
+  font-size: 18px;
+}
+
+.nic-preview-bow_tie::after {
+  content: "◆";
+
+  color: #956dff;
+
+  font-size: 20px;
+}
+
+.nic-preview-scarf::after {
+  content: "≈";
+
+  color: #b34a63;
+
+  font-size: 27px;
+}
+
+.nic-preview-monocle::after {
+  content: "◯";
+
+  color: #ccb067;
+
+  font-size: 23px;
+}
+
+.nic-preview-eye_patch::after {
+  content: "◒";
+
+  color: #777f89;
+
+  font-size: 22px;
+}
+
+.nic-preview-mustache::after {
+  content: "〰";
+
+  color: #787e88;
+
+  font-size: 26px;
+}
+
+.nic-preview-backpack::after {
+  content: "▣";
+
+  color: #60738b;
+
+  font-size: 22px;
+}
+
+.nic-preview-cape::after {
+  content: "▼";
+
+  color: #8651ad;
+
+  font-size: 23px;
+}
+
+.nic-preview-star_glasses::after {
+  content: "★ ★";
+
+  color: #dfbc58;
+
+  font-size: 14px;
+}
+
+.nic-preview-heart_glasses::after {
+  content: "♥ ♥";
+
+  color: #d56c8d;
+
+  font-size: 14px;
+}
+
+.nic-preview-party_hat::after {
+  content: "△";
+
+  color: #9570ef;
+
+  font-size: 25px;
+}
+
+.nic-preview-wizard_hat::after {
+  content: "▲";
+
+  color: #7655bc;
+
+  font-size: 24px;
+}
+
+
+/* Hide old emoji preview text for accessories */
+.nic-preview-sunglasses span,
+.nic-preview-headphones span,
+.nic-preview-crown span,
+.nic-preview-gold_chain span,
+.nic-preview-baseball_cap span,
+.nic-preview-beanie span,
+.nic-preview-halo span,
+.nic-preview-devil_horns span,
+.nic-preview-bow_tie span,
+.nic-preview-scarf span,
+.nic-preview-monocle span,
+.nic-preview-eye_patch span,
+.nic-preview-mustache span,
+.nic-preview-backpack span,
+.nic-preview-cape span,
+.nic-preview-star_glasses span,
+.nic-preview-heart_glasses span,
+.nic-preview-party_hat span,
+.nic-preview-wizard_hat span {
+  display: none;
+}
+
+
+/* =========================================================
+   NIC ACTIVE TITLE
+   ========================================================= */
+
+.nic-active-title {
+  width: fit-content;
+
+  max-width: 90%;
+
+  margin:
+    12px auto 0;
+
+  padding:
+    7px 14px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #261f34,
+      #1c1825
+    );
+
+  border:
+    1px solid #423354;
+
+  color: #c6a9ff;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  text-align: center;
+}
+
+.nic-mood {
+  margin-top: 8px;
+}
+
+
+/* =========================================================
+   GAME PERSONAL RECORDS
+   ========================================================= */
+
+.personal-records-card {
+  margin-top: 16px;
+
+  padding: 20px;
+
+  border-radius: 22px;
+
+  background: #15181f;
+  border: 1px solid #292e39;
+}
+
+.records-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 14px;
+
+  background: #29231a;
+  border: 1px solid #493c24;
+
+  font-size: 18px;
+}
+
+.personal-records-list {
+  display: grid;
+
+  gap: 0;
+
+  margin-top: 14px;
+}
+
+.personal-record-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  padding: 14px 0;
+
+  border-bottom: 1px solid #252a34;
+}
+
+.personal-record-row:last-child {
+  border-bottom: none;
+}
+
+.personal-record-game {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  min-width: 0;
+}
+
+.personal-record-icon {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #211b2d;
+  border: 1px solid #342747;
+
+  color: #b79aff;
+
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.personal-record-game > div:last-child {
+  min-width: 0;
+}
+
+.personal-record-game strong {
+  display: block;
+
+  color: #f2f4f8;
+
+  font-size: 12px;
+}
+
+.personal-record-game span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #747b87;
+
+  font-size: 9px;
+}
+
+.personal-record-score {
+  flex-shrink: 0;
+
+  color: #f1c36a;
+
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.personal-record-score.empty {
+  color: #555c67;
+}
+
+
+/* =========================================================
+   GLOBAL LEADERBOARDS
+   ========================================================= */
+
+.leaderboard-card {
+  margin-top: 16px;
+
+  padding: 20px;
+
+  border-radius: 22px;
+
+  background: #15181f;
+  border: 1px solid #292e39;
+}
+
+.leaderboard-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 17px;
+}
+
+.leaderboard-heading h2 {
+  margin: 0;
+
+  font-size: 21px;
+}
+
+.leaderboard-trophy {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 14px;
+
+  background: #29231a;
+  border: 1px solid #493c24;
+
+  color: #f0bf67;
+
+  font-size: 20px;
+}
+
+
+/* NICKNAME */
+
+.leaderboard-name-card {
+  padding: 14px;
+
+  border-radius: 17px;
+
+  background: #191c23;
+  border: 1px solid #292e39;
+}
+
+.leaderboard-name-card strong {
+  display: block;
+
+  font-size: 12px;
+}
+
+.leaderboard-name-card p {
+  margin: 4px 0 12px;
+
+  color: #777e89;
+
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+.leaderboard-name-controls {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto;
+
+  gap: 8px;
+}
+
+.leaderboard-name-controls input {
+  min-width: 0;
+
+  padding: 12px 13px;
+
+  border-radius: 12px;
+
+  border: 1px solid #303542;
+
+  outline: none;
+
+  background: #101218;
+
+  color: white;
+
+  font-size: 16px;
+}
+
+.leaderboard-name-controls input:focus {
+  border-color: #7657ff;
+}
+
+.leaderboard-name-controls button {
+  border: none;
+
+  padding: 0 15px;
+
+  border-radius: 12px;
+
+  background: #7657ff;
+
+  color: white;
+
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.leaderboard-message {
+  display: block;
+
+  margin-top: 9px;
+
+  color: #9f87da;
+
+  font-size: 9px;
+}
+
+
+/* GAME SELECTOR */
+
+.leaderboard-game-tabs {
+  display: flex;
+
+  gap: 7px;
+
+  overflow-x: auto;
+
+  margin-top: 16px;
+  padding-bottom: 7px;
+
+  scrollbar-width: none;
+}
+
+.leaderboard-game-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.leaderboard-game-tabs button {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  border: 1px solid #2b303b;
+
+  padding: 9px 11px;
+
+  border-radius: 999px;
+
+  background: #171a21;
+
+  color: #7d8490;
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.leaderboard-game-tabs button.active {
+  background: #292034;
+  border-color: #4b3970;
+
+  color: #c4a7ff;
+}
+
+.leaderboard-game-tabs button span {
+  color: #ad91ef;
+}
+
+
+/* CURRENT GAME */
+
+.leaderboard-game-title {
+  margin-top: 10px;
+  margin-bottom: 7px;
+
+  padding: 13px 4px;
+}
+
+.leaderboard-game-title > div {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+}
+
+.leaderboard-game-title > div > span {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #211b2d;
+  border: 1px solid #342747;
+
+  color: #b99cff;
+
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.leaderboard-game-title strong {
+  display: block;
+
+  font-size: 13px;
+}
+
+.leaderboard-game-title p {
+  margin: 3px 0 0;
+
+  color: #717884;
+
+  font-size: 9px;
+}
+
+
+/* RANKINGS */
+
+.leaderboard-list {
+  overflow: hidden;
+
+  border-radius: 17px;
+
+  border: 1px solid #292e39;
+
+  background: #171a21;
+}
+
+.leaderboard-row {
+  display: grid;
+
+  grid-template-columns:
+    44px
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 9px;
+
+  min-height: 56px;
+
+  padding: 9px 13px;
+
+  border-bottom:
+    1px solid #262b35;
+}
+
+.leaderboard-row:last-child {
+  border-bottom: none;
+}
+
+.leaderboard-me {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(118, 87, 255, 0.15),
+      rgba(118, 87, 255, 0.03)
+    );
+}
+
+.leaderboard-rank {
+  color: #969da8;
+
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.leaderboard-player {
+  min-width: 0;
+}
+
+.leaderboard-player strong {
+  overflow: hidden;
+
+  display: block;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  font-size: 12px;
+}
+
+.leaderboard-player span {
+  display: inline-block;
+
+  margin-top: 3px;
+
+  color: #aa8cff;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+}
+
+.leaderboard-score {
+  color: #f1c36a;
+
+  font-size: 15px;
+  font-weight: 900;
+
+  font-variant-numeric:
+    tabular-nums;
+}
+
+.leaderboard-empty {
+  padding: 24px;
+
+  border-radius: 17px;
+
+  background: #171a21;
+  border: 1px solid #292e39;
+
+  color: #737a86;
+
+  text-align: center;
+
+  font-size: 11px;
+}
