@@ -1249,3 +1249,23 @@ body {
     padding-right: 16px;
   }
 }
+/* FIX BOTTOM NAV TO SAME POSITION ON EVERY SCREEN */
+
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100%;
+  margin: 0;
+
+  padding-bottom: calc(14px + env(safe-area-inset-bottom));
+
+  z-index: 100;
+}
+
+/* Make sure page content doesn't get hidden behind the fixed nav */
+.app > main {
+  padding-bottom: calc(100px + env(safe-area-inset-bottom));
+}
