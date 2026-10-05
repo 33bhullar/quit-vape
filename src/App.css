@@ -1175,3 +1175,34 @@ h1 {
   margin-top: 24px;
   cursor: pointer;
 }
+/* EMAIL + PASSWORD AUTH */
+
+.auth-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  background: #15181f;
+  border: 1px solid #282d39;
+  border-radius: 16px;
+  padding: 5px;
+  margin-top: 30px;
+}
+
+.auth-toggle button {
+  border: none;
+  background: transparent;
+  color: #7f8693;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.auth-toggle button.active {
+  background: #282034;
+  color: #c3a5ff;
+}
+
+.password-label {
+  margin-top: 18px !important;
+}

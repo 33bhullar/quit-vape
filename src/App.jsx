@@ -145,9 +145,12 @@ function App() {
   const [authLoading, setAuthLoading] = useState(true);
   const [dataLoading, setDataLoading] = useState(false);
 
+  const [authMode, setAuthMode] = useState("signin");
   const [email, setEmail] = useState("");
-  const [loginSent, setLoginSent] = useState(false);
+  const [password, setPassword] = useState("");
+
   const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
 
   const [profile, setProfile] = useState(null);
   const [logs, setLogs] = useState([]);
@@ -263,25 +266,40 @@ function App() {
     }
   }
 
-  async function sendMagicLink(event) {
+  async function handleAuth(event) {
     event.preventDefault();
 
     setErrorMessage("");
-    setLoginSent(false);
+    setSuccessMessage("");
 
-    const { error } = await supabase.auth.signInWithOtp({
+    if (password.length < 6) {
+      setErrorMessage("Password must be at least 6 characters.");
+      return;
+    }
+
+    if (authMode === "signup") {
+      const { error } = await supabase.auth.signUp({
+        email,
+        password,
+      });
+
+      if (error) {
+        setErrorMessage(error.message);
+        return;
+      }
+
+      setSuccessMessage("Account created. You're signed in.");
+      return;
+    }
+
+    const { error } = await supabase.auth.signInWithPassword({
       email,
-      options: {
-        emailRedirectTo: window.location.origin,
-      },
+      password,
     });
 
     if (error) {
       setErrorMessage(error.message);
-      return;
     }
-
-    setLoginSent(true);
   }
 
   async function signOut() {
@@ -495,6 +513,16 @@ function App() {
       return b.attempts - a.attempts;
     })[0];
 
+    const sortedRecent = [...logs].sort(
+      (a, b) => new Date(b.created_at) - new Date(a.created_at)
+    );
+
+    const recentLogs = sortedRecent.slice(0, 10);
+    const earlierLogs = sortedRecent.slice(10, 20);
+
+    const recentRate = calculateSuccessRate(recentLogs);
+    const earlierRate = calculateSuccessRate(earlierLogs);
+
     const now = new Date();
 
     const sevenDaysAgo = new Date(now);
@@ -513,16 +541,6 @@ function App() {
       return date >= fourteenDaysAgo && date < sevenDaysAgo;
     });
 
-    const sortedRecent = [...logs].sort(
-      (a, b) => new Date(b.created_at) - new Date(a.created_at)
-    );
-
-    const recentLogs = sortedRecent.slice(0, 10);
-    const earlierLogs = sortedRecent.slice(10, 20);
-
-    const recentRate = calculateSuccessRate(recentLogs);
-    const earlierRate = calculateSuccessRate(earlierLogs);
-
     let insight = `Your cravings happen most often during the ${peakTime.toLowerCase()}.`;
 
     if (
@@ -534,14 +552,6 @@ function App() {
 
     if (hardest?.name) {
       insight += ` ${hardest.name} appears to be one of your tougher triggers.`;
-    }
-
-    if (
-      recentLogs.length >= 3 &&
-      earlierLogs.length >= 3 &&
-      recentRate > earlierRate
-    ) {
-      insight += " Your recent success rate is improving.";
     }
 
     return {
@@ -844,14 +854,43 @@ function App() {
         <div className="auth-logo">✦</div>
 
         <p className="eyebrow">TAKE BACK CONTROL</p>
-        <h1>Quit vaping one craving at a time.</h1>
+
+        <h1>
+          {authMode === "signin"
+            ? "Welcome back."
+            : "Create your account."}
+        </h1>
 
         <p className="auth-subtext">
-          Build streaks, beat cravings, earn XP and learn what actually
-          works for you.
+          Build streaks, beat cravings, earn XP and learn what
+          actually works for you.
         </p>
 
-        <form className="auth-form" onSubmit={sendMagicLink}>
+        <div className="auth-toggle">
+          <button
+            className={authMode === "signin" ? "active" : ""}
+            onClick={() => {
+              setAuthMode("signin");
+              setErrorMessage("");
+              setSuccessMessage("");
+            }}
+          >
+            Sign In
+          </button>
+
+          <button
+            className={authMode === "signup" ? "active" : ""}
+            onClick={() => {
+              setAuthMode("signup");
+              setErrorMessage("");
+              setSuccessMessage("");
+            }}
+          >
+            Create Account
+          </button>
+        </div>
+
+        <form className="auth-form" onSubmit={handleAuth}>
           <label>Email</label>
 
           <input
@@ -862,15 +901,26 @@ function App() {
             required
           />
 
+          <label className="password-label">Password</label>
+
+          <input
+            type="password"
+            placeholder="At least 6 characters"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+            required
+            minLength={6}
+          />
+
           <button className="primary-action" type="submit">
-            Send login link
+            {authMode === "signin"
+              ? "Sign In"
+              : "Create Account"}
           </button>
         </form>
 
-        {loginSent && (
-          <div className="login-message">
-            Check your email. Tap the link and you'll be signed in.
-          </div>
+        {successMessage && (
+          <div className="login-message">{successMessage}</div>
         )}
 
         {errorMessage && (
@@ -994,10 +1044,7 @@ function App() {
             </button>
           </main>
 
-          <BottomNav
-            active="home"
-            setScreen={setScreen}
-          />
+          <BottomNav active="home" setScreen={setScreen} />
         </>
       )}
 
@@ -1146,10 +1193,7 @@ function App() {
             </button>
           </main>
 
-          <BottomNav
-            active="progress"
-            setScreen={setScreen}
-          />
+          <BottomNav active="progress" setScreen={setScreen} />
         </>
       )}
 
@@ -1218,19 +1262,6 @@ function App() {
               </div>
             </section>
 
-            <section className="trend-card-full">
-              <p className="card-label">RECENT PERFORMANCE</p>
-
-              <div className="trend-detail-row">
-                <div>
-                  <h2>{trendData.recentRate}%</h2>
-                  <p>
-                    Success rate across your most recent cravings.
-                  </p>
-                </div>
-              </div>
-            </section>
-
             <section className="weekly-comparison-card">
               <p className="card-label">CRAVING ACTIVITY</p>
 
@@ -1246,20 +1277,9 @@ function App() {
                 </div>
               </div>
             </section>
-
-            <section className="trend-note">
-              <strong>More data = better insights</strong>
-              <p>
-                Trends improve as you log cravings, triggers,
-                challenges and outcomes.
-              </p>
-            </section>
           </main>
 
-          <BottomNav
-            active="trends"
-            setScreen={setScreen}
-          />
+          <BottomNav active="trends" setScreen={setScreen} />
         </>
       )}
 
@@ -1339,10 +1359,7 @@ function App() {
             </div>
           </main>
 
-          <BottomNav
-            active="achievements"
-            setScreen={setScreen}
-          />
+          <BottomNav active="achievements" setScreen={setScreen} />
         </>
       )}
 
@@ -1478,18 +1495,6 @@ function App() {
 
           <div className="xp-earned">+{lastXpEarned} XP</div>
 
-          {lastXpEarned > currentChallenge.xp && (
-            <div className="bonus-message">
-              Daily challenge complete!
-              <strong> +100 XP bonus</strong>
-            </div>
-          )}
-
-          <div className="result-stat">
-            <span>{challengeStreak}</span>
-            <p>challenge streak</p>
-          </div>
-
           <button className="primary-action" onClick={goHome}>
             Back Home
           </button>
@@ -1506,7 +1511,7 @@ function App() {
 
           <p className="result-text">
             Your XP, achievements and cravings you've already beaten
-            are still yours. Start again with the next craving.
+            are still yours.
           </p>
 
           <button className="primary-action" onClick={goHome}>
