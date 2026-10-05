@@ -7,6 +7,7 @@ const triggerOptions = [
   "Boredom",
   "Driving",
   "After eating",
+  "After waking up",
   "Social",
   "Studying / Work",
   "Alcohol",
